@@ -35,13 +35,15 @@ public class TestDataProvider {
     document.put("fist_name", FAKER.name().firstName());
     document.put("last_name", FAKER.name().lastName());
 
+    var newDocumentId = UUID.randomUUID().toString();
+
     final IndexRequest indexRequest = new IndexRequest()
-        .index("mn-es-idx")
-        .id(UUID.randomUUID().toString())
+        .index(Constants.INDEX)
+        .id(newDocumentId)
         .source(document, XContentType.JSON);
 
     // client.in
-
+    LOG.debug("attempting to insert document {} with id {}", document, newDocumentId);
     try {
       client.index(indexRequest, RequestOptions.DEFAULT);
     } catch (Exception e) {

@@ -1,4 +1,4 @@
-package com.example;
+package com.hassialis.philip;
 
 import io.micronaut.runtime.Micronaut;
 

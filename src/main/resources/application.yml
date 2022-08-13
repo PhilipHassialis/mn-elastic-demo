@@ -6,7 +6,7 @@ netty:
     allocator:
       max-order: 3
 elasticsearch:
-  httpHosts: http://localhost:9200,http://127.0.0.2:9200
+  httpHosts: "http://localhost:9200,http://127.0.0.2:9200"
   request:
     default:
       connect-timeout: 1000
